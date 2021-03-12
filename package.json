@@ -1,0 +1,26 @@
+{
+  "name": "cqrs-es-ddd-demo",
+  "version": "1.0.0",
+  "dependencies": {
+    "@types/body-parser": "1.19.0",
+    "@types/cors": "2.8.10",
+    "@types/express": "4.17.11",
+    "@types/node": "14.14.34",
+    "@types/uuid": "8.3.0",
+    "body-parser": "1.19.0",
+    "cors": "2.8.5",
+    "express": "4.17.1",
+    "flaschenpost": "5.0.10",
+    "processenv": "3.0.3",
+    "uuid": "8.3.2"
+  },
+  "devDependencies": {
+    "eslint": "7.21.0",
+    "eslint-config-es": "3.28.16",
+    "ts-node": "9.1.1",
+    "typescript": "4.2.3"
+  },
+  "scripts": {
+    "dev": "npx ts-node app.ts"
+  }
+}

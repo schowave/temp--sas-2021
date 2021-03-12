@@ -3,6 +3,9 @@
 - @goloroden
 - @thenativeweb
 
+- golo [dot] roden [at] thenativeweb [dot] io
+- https://www.youtube.com/channel/UC0BtS97KQR7I4Xqa9VYlkvg
+
 
 ## Domain-Driven Design
 
@@ -205,7 +208,7 @@ CA = Konsistent + verfügbar (unrealistisch, da Netzwerke instabil sind)
                               v                             |
        API (Command) -----> Domain -----> Evt --------> Event-Store
      /                                     |
-  Cmds                             +-------+
+  Cmds                             +--Event-Publisher
    /                               |       |
 UI <-- API (Event) ----------------+   Projektion
    \                                       |
@@ -218,3 +221,48 @@ UI <-- API (Event) ----------------+   Projektion
   - Query
   - Mutation
   - Subscription
+
+
+## Beispielanwendung
+
+Starten:
+
+```shell
+$ npm run dev
+```
+
+Spiel eröffnen:
+
+```shell
+$ curl \
+    -i \
+    -X POST \
+    http://localhost:3000/playing/game/open
+```
+
+Vermutung äußern:
+
+```shell
+$ curl \
+    -i \
+    -X POST \
+    -H "content-type: application/json" \
+    -d '{"guess":"..."}'
+    http://localhost:3000/playing/game/<id>/make-guess
+```
+
+Events abonnieren:
+
+```shell
+$ curl \
+    -i \
+    http://localhost:3000/events
+```
+
+Laufende Spiele auflisten:
+
+```shell
+$ curl \
+    -i \
+    http://localhost:3000/games
+```
